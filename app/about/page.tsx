@@ -49,7 +49,12 @@ export default function AboutPage() {
                 Full stack developer
               </p>
               <Button variant="outline" className="group ml-16">
-                Download CV
+                <a
+                  href="https://drive.google.com/file/d/15N0YZ7Fy21dl8lHHDIg1tYFdWAYmB9E-/view?usp=drive_link"
+                  target="_blank"
+                >
+                  Download CV
+                </a>
                 <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Button>
             </motion.div>
@@ -91,7 +96,7 @@ export default function AboutPage() {
                   projects and continue to grow through real-world development.
                   I’ve also been working with Go (Golang), building efficient
                   and performant backend services that enhance my understanding
-                  of scalable system design.
+                  of system design.
                 </p>
               </div>
 

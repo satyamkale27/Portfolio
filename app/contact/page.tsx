@@ -1,31 +1,31 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { NavMenu } from "@/components/nav-menu"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { ArrowUpRight } from "lucide-react"
+import { motion } from "framer-motion";
+import { NavMenu } from "@/components/nav-menu";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { ArrowUpRight } from "lucide-react";
 
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-background">
       <NavMenu />
-      
+
       <div className="lg:ml-[100px] p-6 lg:p-12">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="max-w-5xl mx-auto pt-16 lg:pt-0"
         >
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-sm text-muted-foreground mb-4"
           >
             Contact
           </motion.p>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -41,11 +41,13 @@ export default function ContactPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <h2 className="text-xl lg:text-2xl font-bold mb-6">Let's talk about everything!</h2>
+              <h2 className="text-xl lg:text-2xl font-bold mb-6">
+                Let's talk about everything!
+              </h2>
               <p className="text-muted-foreground mb-8">
                 Don't like forms? Send me an email. 👋
               </p>
-              
+
               <form className="space-y-6">
                 <div className="space-y-2">
                   <Input type="text" placeholder="Your name" />
@@ -57,7 +59,10 @@ export default function ContactPage() {
                   <Input type="text" placeholder="Subject" />
                 </div>
                 <div className="space-y-2">
-                  <Textarea placeholder="Your message" className="min-h-[200px]" />
+                  <Textarea
+                    placeholder="Your message"
+                    className="min-h-[200px]"
+                  />
                 </div>
                 <Button className="w-full group">
                   Send message
@@ -74,25 +79,46 @@ export default function ContactPage() {
             >
               <div>
                 <h3 className="font-bold mb-2">Address</h3>
-                <p className="text-muted-foreground">Egypt</p>
+                <p className="text-muted-foreground">India</p>
               </div>
-              
-              <div>
+
+              {/* <div>
                 <h3 className="font-bold mb-2">Phone</h3>
                 <p className="text-muted-foreground">+20 11 43 63 73 41</p>
-              </div>
+              </div> */}
 
               <div>
                 <h3 className="font-bold mb-2">Email</h3>
-                <p className="text-muted-foreground">fawzisayed1209@gmail.com</p>
+                <p className="text-muted-foreground">kalesatyam669@gmail.com</p>
               </div>
 
               <div className="pt-8">
                 <h3 className="font-bold mb-4">Follow me</h3>
                 <div className="flex flex-wrap gap-4">
-                  <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">Behance</a>
-                  <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">Dribbble</a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">Instagram</a>
+                  <a
+                    href="https://x.com/satyamkale27"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Twitter
+                  </a>
+                  <a
+                    href="https://github.com/satyamkale27"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Github
+                  </a>
+                  <a
+                    href="https://hashnode.com/@satyam27"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    hashnode
+                  </a>
                 </div>
               </div>
             </motion.div>
@@ -100,5 +126,5 @@ export default function ContactPage() {
         </motion.div>
       </div>
     </main>
-  )
+  );
 }

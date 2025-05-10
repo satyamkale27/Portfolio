@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
-import { Menu, X } from "lucide-react"
-import { useState } from "react"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const links = [
   { name: "Home", href: "/" },
@@ -14,16 +14,16 @@ const links = [
   { name: "Work", href: "/work" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
-]
+];
 
 export function NavMenu() {
-  const pathname = usePathname()
-  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       {/* Mobile Menu Button */}
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed top-4 right-4 z-50 p-2 bg-black text-white rounded-full lg:hidden"
       >
@@ -48,9 +48,30 @@ export function NavMenu() {
               </Link>
             ))}
             <div className="flex gap-6 mt-8">
-              <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white">Be</a>
-              <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white">Dr</a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white">In</a>
+              <a
+                href="https://behance.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white"
+              >
+                Be
+              </a>
+              <a
+                href="https://dribbble.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white"
+              >
+                Dr
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-white"
+              >
+                In
+              </a>
             </div>
           </nav>
         </div>
@@ -58,7 +79,9 @@ export function NavMenu() {
 
       {/* Desktop Sidebar */}
       <nav className="fixed left-0 top-0 h-screen w-[100px] bg-black text-white hidden lg:flex flex-col items-center py-8">
-        <Link href="/" className="text-2xl font-bold mb-16">FS</Link>
+        <Link href="/" className="text-2xl font-bold mb-16">
+          SK
+        </Link>
         <div className="flex flex-col gap-8">
           {links.map((link) => (
             <Link
@@ -80,12 +103,33 @@ export function NavMenu() {
             </Link>
           ))}
         </div>
-        <div className="mt-auto flex flex-col gap-4">
-          <a href="https://behance.net" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white">Be</a>
-          <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white">Dr</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white">In</a>
-        </div>
+        {/* <div className="mt-auto flex flex-col gap-4">
+          <a
+            href="https://behance.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/60 hover:text-white"
+          >
+            Be
+          </a>
+          <a
+            href="https://dribbble.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/60 hover:text-white"
+          >
+            Dr
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/60 hover:text-white"
+          >
+            In
+          </a>
+        </div> */}
       </nav>
     </>
-  )
+  );
 }
