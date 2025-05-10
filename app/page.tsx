@@ -1,0 +1,69 @@
+"use client"
+
+import { motion } from "framer-motion"
+import { NavMenu } from "@/components/nav-menu"
+import { Button } from "@/components/ui/button"
+import { ArrowUpRight } from "lucide-react"
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-background">
+      <NavMenu />
+      
+      <div className="lg:ml-[100px] p-6 lg:p-12">
+        <motion.section 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="min-h-screen flex flex-col lg:flex-row items-center relative pt-16 lg:pt-0"
+        >
+          <div className="max-w-2xl text-center lg:text-left z-10">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="text-4xl lg:text-6xl font-bold mb-4"
+            >
+              MY NAME IS<br />
+              <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-transparent bg-clip-text">
+                FAWZI SAYED
+              </span>
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+              className="text-lg lg:text-xl text-muted-foreground mb-8"
+            >
+              Product Designer based in Egypt
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+            >
+              <Button className="group">
+                Let's talk
+                <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Button>
+            </motion.div>
+          </div>
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="relative w-full max-w-[300px] lg:max-w-[500px] h-[300px] lg:h-[500px] mt-12 lg:mt-0 lg:absolute lg:top-1/2 lg:right-12 lg:-translate-y-1/2"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 rounded-full blur-3xl" />
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop"
+              alt="Profile"
+              className="relative w-full h-full object-cover rounded-full"
+            />
+          </motion.div>
+        </motion.section>
+      </div>
+    </main>
+  )
+}
