@@ -56,7 +56,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="relative w-full max-w-[300px] lg:max-w-[500px] h-[300px] lg:h-[500px] mt-8 lg:mt-0"
+            className="relative w-[200px] sm:w-[250px] md:w-[300px] lg:w-[500px] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[500px] mt-8 lg:mt-0"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 rounded-full blur-3xl" />
             <img
