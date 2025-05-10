@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
+    <main className="h-screen bg-background overflow-hidden">
       <NavMenu />
 
       <div className="lg:ml-[100px] p-6 lg:p-12">
@@ -15,7 +15,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="min-h-screen flex flex-col lg:flex-row items-center justify-between relative pt-16 lg:pt-0"
+          className="h-full flex flex-col lg:flex-row items-center justify-between relative pt-8 lg:pt-0"
         >
           {/* Text Section */}
           <div className="max-w-2xl text-center lg:text-left z-10">
@@ -56,7 +56,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="relative w-full max-w-[300px] lg:max-w-[500px] h-[300px] lg:h-[500px] mt-12 lg:mt-0"
+            className="relative w-full max-w-[300px] lg:max-w-[500px] h-[300px] lg:h-[500px] mt-8 lg:mt-0"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 rounded-full blur-3xl" />
             <img
