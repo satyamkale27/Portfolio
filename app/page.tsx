@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="h-screen bg-background overflow-hidden">
+    <main className="h-screen bg-background overflow-hidden p-28">
       <NavMenu />
 
       <div className="lg:ml-[100px] p-6 lg:p-12">

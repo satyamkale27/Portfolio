@@ -47,38 +47,12 @@ export function NavMenu() {
                 {link.name}
               </Link>
             ))}
-            <div className="flex gap-6 mt-8">
-              <a
-                href="https://behance.net"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white"
-              >
-                Be
-              </a>
-              <a
-                href="https://dribbble.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white"
-              >
-                Dr
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white"
-              >
-                In
-              </a>
-            </div>
           </nav>
         </div>
       )}
 
       {/* Desktop Sidebar */}
-      <nav className="fixed left-0 top-0 h-screen w-[100px] bg-black text-white hidden lg:flex flex-col items-center py-8">
+      <nav className="fixed left-0 top-0 h-screen w-[170px] bg-black text-white hidden lg:flex flex-col items-center py-8">
         <Link href="/" className="text-2xl font-bold mb-16">
           SK
         </Link>
@@ -103,32 +77,6 @@ export function NavMenu() {
             </Link>
           ))}
         </div>
-        {/* <div className="mt-auto flex flex-col gap-4">
-          <a
-            href="https://behance.net"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/60 hover:text-white"
-          >
-            Be
-          </a>
-          <a
-            href="https://dribbble.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/60 hover:text-white"
-          >
-            Dr
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/60 hover:text-white"
-          >
-            In
-          </a>
-        </div> */}
       </nav>
     </>
   );
