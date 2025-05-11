@@ -10,12 +10,12 @@ export default function AboutPage() {
     <main className="min-h-screen bg-background">
       <NavMenu />
 
-      <div className="lg:ml-[100px] p-6 lg:p-12">
+      <div className="max-w-screen-lg mx-auto px-6 lg:px-12">
         <div className="max-w-5xl mx-auto pt-16 lg:pt-0">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-sm text-muted-foreground mb-4"
+            className="text-sm text-muted-foreground mb-4 text-center lg:text-left"
           >
             Nice to meet you!
           </motion.p>
@@ -24,12 +24,13 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-3xl lg:text-4xl font-bold mb-12"
+            className="text-3xl lg:text-4xl font-bold mb-12 text-center lg:text-left"
           >
             WELCOME TO...
           </motion.h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left Section */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -39,16 +40,19 @@ export default function AboutPage() {
               <img
                 src="/satyam.png"
                 alt="Profile"
-                className="w-48 h-48 lg:w-96 lg:h-96 object-cover rounded-full mx-auto lg:mx-0 mb-8"
+                className="w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 object-cover rounded-full mx-auto lg:mx-0 mb-8"
               />
-              <h2 className="text-2xl lg:text-3xl font-bold mb-4 ml-16">
+              <h2 className="text-2xl lg:text-3xl font-bold mb-4">
                 <span className="text-purple-500">SATYAM</span>
                 <span className="text-orange-500">KALE</span>
               </h2>
-              <p className="text-base lg:text-lg text-muted-foreground mb-6 ml-16">
+              <p className="text-base lg:text-lg text-muted-foreground mb-6">
                 Full stack developer
               </p>
-              <Button variant="outline" className="group ml-16">
+              <Button
+                variant="outline"
+                className="group w-full sm:w-auto mx-auto lg:mx-0"
+              >
                 <a
                   href="https://drive.google.com/file/d/15N0YZ7Fy21dl8lHHDIg1tYFdWAYmB9E-/view?usp=drive_link"
                   target="_blank"
@@ -59,6 +63,7 @@ export default function AboutPage() {
               </Button>
             </motion.div>
 
+            {/* Right Section */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -66,22 +71,8 @@ export default function AboutPage() {
               className="space-y-8"
             >
               <div className="grid grid-cols-2 gap-8">
-                <div>
-                  {/* <p className="text-3xl lg:text-4xl font-bold text-purple-500">
-                    10+
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Years experience...
-                  </p> */}
-                </div>
-                <div>
-                  {/* <p className="text-3xl lg:text-4xl font-bold text-orange-500">
-                    14
-                  </p> */}
-                  {/* <p className="text-sm text-muted-foreground">
-                    Clients Worldwide...
-                  </p> */}
-                </div>
+                <div>{/* Placeholder for stats */}</div>
+                <div>{/* Placeholder for stats */}</div>
               </div>
 
               <div>
@@ -99,22 +90,20 @@ export default function AboutPage() {
                   of system design.
                 </p>
               </div>
-
-              {/* <blockquote className="bg-black text-white p-6 rounded-lg">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Faucibus sed sit ultrices et sed metus sollicitudin."
-              </blockquote> */}
             </motion.div>
           </div>
 
+          {/* Experience Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="mt-24"
           >
-            <h2 className="text-sm text-muted-foreground mb-4">Experience</h2>
-            <h3 className="text-2xl lg:text-3xl font-bold mb-12">
+            <h2 className="text-sm text-muted-foreground mb-4 text-center lg:text-left">
+              Experience
+            </h2>
+            <h3 className="text-2xl lg:text-3xl font-bold mb-12 text-center lg:text-left">
               MY EXPERIENCE
             </h3>
 
@@ -129,7 +118,7 @@ export default function AboutPage() {
                     Backend Developer (Go)
                   </h4>
                   <p className="text-sm opacity-80">
-                    Building backend services with Golang and SQL databases{" "}
+                    Building backend services with Golang and SQL databases
                   </p>
                 </div>
                 <div className="text-center lg:text-left">
