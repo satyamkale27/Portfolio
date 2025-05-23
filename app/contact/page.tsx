@@ -77,6 +77,13 @@ export default function ContactPage() {
     if (validateForm()) {
       // Call sendMessage with form data
       await sendMessage(formData);
+
+      setFormData({
+        fullName: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
     }
   };
 
