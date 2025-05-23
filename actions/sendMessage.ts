@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "@/hooks/use-toast"; // Import the toast function
 
-const sendMessage = async (contactDetails: object) => {
+export const sendMessage = async (contactDetails: object) => {
   try {
     const response = await axios.post(
       "http://3.110.117.102:8080/api/contact",
