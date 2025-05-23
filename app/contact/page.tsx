@@ -182,6 +182,53 @@ export default function ContactPage() {
                 </Button>
               </form>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+              className="space-y-8"
+            >
+              <div>
+                <h3 className="font-bold mb-2">Address</h3>
+                <p className="text-muted-foreground">India</p>
+              </div>
+
+              <div>
+                <h3 className="font-bold mb-2">Email</h3>
+                <p className="text-muted-foreground">kalesatyam669@gmail.com</p>
+              </div>
+
+              <div className="pt-8">
+                <h3 className="font-bold mb-4">Follow me</h3>
+                <div className="flex flex-wrap gap-4">
+                  <a
+                    href="https://x.com/satyamkale27"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Twitter
+                  </a>
+                  <a
+                    href="https://github.com/satyamkale27"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Github
+                  </a>
+                  <a
+                    href="https://hashnode.com/@satyam27"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    hashnode
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
