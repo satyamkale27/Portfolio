@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { NavMenu } from "@/components/nav-menu";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import { useState } from "react";
 
 interface BlogPost {
   category: string;
@@ -47,6 +48,12 @@ const blogPosts: BlogPost[] = [
 // image size height 320, width:320
 
 export default function BlogPage() {
+  const [visiblePosts, setVisiblePosts] = useState(3); // Initially show 3 blog posts
+
+  const handleLoadMore = () => {
+    setVisiblePosts((prev) => prev + 3); // Load 3 more blog posts
+  };
+
   return (
     <main className="min-h-screen bg-background">
       <NavMenu />
@@ -74,8 +81,8 @@ export default function BlogPage() {
             LATEST ARTICLES
           </motion.h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {blogPosts.slice(0, visiblePosts).map((post, index) => (
               <motion.a
                 key={index}
                 href={post.link} // Link to the blog post
@@ -84,36 +91,47 @@ export default function BlogPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
-                className="group cursor-pointer"
+                className="group block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-card"
               >
-                <div className="relative mb-6">
-                  <div className="aspect-[4/3] overflow-hidden rounded-lg">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 rounded-lg" />
+                {/* Blog Image */}
+                <div className="relative">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <p className="text-sm text-purple-500 mb-2">{post.category}</p>
-                <h3 className="text-xl font-bold mb-4 group-hover:text-purple-500 transition-colors">
-                  {post.title}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-6">
-                  {post.description}
-                </p>
-                <p className="text-sm text-muted-foreground">{post.date}</p>
+
+                {/* Blog Content */}
+                <div className="p-6">
+                  <p className="text-sm text-purple-500 mb-2">
+                    {post.category}
+                  </p>
+                  <h3 className="text-lg font-bold mb-4 group-hover:text-purple-500 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {post.description}
+                  </p>
+                  <p className="text-sm text-muted-foreground">{post.date}</p>
+                </div>
               </motion.a>
             ))}
           </div>
 
-          <div className="flex justify-center mt-12">
-            <Button variant="outline" className="group">
-              Load more
-              <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </Button>
-          </div>
+          {visiblePosts < blogPosts.length && ( // Show button only if there are more posts to load
+            <div className="flex justify-center mt-12">
+              <Button
+                variant="outline"
+                className="group"
+                onClick={handleLoadMore}
+              >
+                Load more
+                <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Button>
+            </div>
+          )}
         </motion.div>
       </div>
     </main>
