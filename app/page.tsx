@@ -44,10 +44,17 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.5 }}
             >
-              <Button className="group">
-                Let's talk
-                <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </Button>
+              <a
+                href="https://twitter.com/messages/compose?recipient_id=1418223205395755011"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button className="group">
+                  Let's talk
+                  <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </Button>
+              </a>
             </motion.div>
           </div>
 
