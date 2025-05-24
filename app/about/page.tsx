@@ -77,17 +77,17 @@ export default function AboutPage() {
 
               <div>
                 <p className="text-base lg:text-lg mb-4">
-                  Hello there! My name is Satyam Kale. I am a web developer with
-                  a strong passion for creating clean, functional, and
-                  user-focused applications.
+                  Hello there! My name is Satyam Kale. I am a full stack
+                  developer and open source contributor with a strong focus on
+                  backend development and creating robust REST APIs.
                 </p>
                 <p className="text-base lg:text-lg text-muted-foreground">
                   With hands-on experience in modern web technologies like
                   React, Node.js, and Express, I’ve built several full-stack
                   projects and continue to grow through real-world development.
-                  I’ve also been working with Go (Golang), building efficient
-                  and performant backend services that enhance my understanding
-                  of system design.
+                  I’ve also been working with Go (Golang), learning to build
+                  concurrent backend services and implementing design patterns
+                  in backend development.
                 </p>
               </div>
             </motion.div>
