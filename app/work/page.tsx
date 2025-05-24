@@ -9,7 +9,8 @@ interface Project {
   title: string;
   type: string;
   image: string;
-  github: string; // Added GitHub link property
+  github: string;
+  description: string; // Added description property
 }
 
 const projects: Project[] = [
@@ -18,18 +19,24 @@ const projects: Project[] = [
     type: "Backend, Rest api",
     image: "/projectMedia/goSocial.png",
     github: "https://github.com/satyamkale27/Go-social",
+    description:
+      "Go-social is a backend REST API project designed to power social media platforms. It includes user authentication, post management, and real-time notifications.",
   },
   {
     title: "Video player client",
     type: "HLS, AWS, video player",
     image: "/projectMedia/videoPlayer.png",
     github: "https://github.com/satyamkale27/video-js",
+    description:
+      "A video player client built with HLS streaming and AWS integration, offering seamless video playback and adaptive streaming.",
   },
   {
     title: "Anime Streaming microservice",
     type: "express, Restapi, AWS-S3Bucket",
     image: "/projectMedia/aniStreaming.png",
     github: "https://github.com/satyamkale27/Ani-streaming",
+    description:
+      "A microservice for anime streaming, featuring REST APIs for content delivery and AWS S3 for storage.",
   },
 ];
 
@@ -61,31 +68,47 @@ export default function WorkPage() {
             RECENT PROJECT
           </motion.h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <motion.a
+              <motion.div
                 key={index}
-                href={project.github} // Link to GitHub repository
-                target="_blank"
-                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                className="group cursor-pointer"
+                className="group relative overflow-hidden rounded-lg shadow-lg border border-border bg-card hover:shadow-xl transition-shadow"
               >
-                <p className="text-sm text-muted-foreground mb-2">
-                  {project.type}
-                </p>
-                <h2 className="text-xl font-bold mb-4">{project.title}</h2>
-                <div className="relative overflow-hidden rounded-lg">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full aspect-[4/3] object-cover transform group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <ArrowUpRight className="absolute bottom-4 right-4 h-6 w-6 text-white opacity-0 transform translate-x-2 -translate-y-2 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0" />
-                </div>
-              </motion.a>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View details about ${project.title}`}
+                  className="block"
+                >
+                  <div className="relative">
+                    <img
+                      src={project.image}
+                      alt={`Preview of ${project.title}`}
+                      className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <ArrowUpRight className="absolute bottom-4 right-4 h-6 w-6 text-white opacity-0 transform translate-x-2 -translate-y-2 transition-all group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0" />
+                  </div>
+                  <div className="p-4">
+                    <p className="text-sm text-muted-foreground mb-2">
+                      {project.type}
+                    </p>
+                    <h2 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h2>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {project.description}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Explore the repository to learn more about this project.
+                    </p>
+                  </div>
+                </a>
+              </motion.div>
             ))}
           </div>
 
