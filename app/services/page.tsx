@@ -22,12 +22,12 @@ const services: Service[] = [
   {
     title: "FRONTEND DEVELOPMENT",
     description:
-      "Creating interactive and dynamic user interfaces with React, NEXTJS, focusing on user experience and performance.",
+      "Creating interactive and dynamic user interfaces with React and NEXTJS, focusing on user experience and performance. I also have experience working with React libraries like Redux for state management.",
   },
   {
     title: "BACKEND DEVELOPMENT (Go) and ExpressJS",
     description:
-      "Designing and developing robust backend systems using Go and Expressjs, including working with REST APIs and databases.",
+      "Designing and developing backend systems using Go and ExpressJS, including working with REST APIs and databases. I also have experience in creating concurrent backend services in Golang and implementing backend design patterns to build scalable and efficient systems.",
   },
   {
     title: "OPEN SOURCE CONTRIBUTION",
