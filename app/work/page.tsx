@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { NavMenu } from "@/components/nav-menu";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 interface Project {
   title: string;
@@ -41,6 +42,12 @@ const projects: Project[] = [
 ];
 
 export default function WorkPage() {
+  const [visibleProjects, setVisibleProjects] = useState(3); // Initially show 3 projects
+
+  const handleLoadMore = () => {
+    setVisibleProjects((prev) => prev + 3); // Load 3 more projects
+  };
+
   return (
     <main className="min-h-screen bg-background">
       <NavMenu />
@@ -69,7 +76,7 @@ export default function WorkPage() {
           </motion.h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {projects.slice(0, visibleProjects).map((project, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -112,12 +119,18 @@ export default function WorkPage() {
             ))}
           </div>
 
-          <div className="flex justify-center mt-12">
-            <Button variant="outline" className="group">
-              Load more
-              <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </Button>
-          </div>
+          {visibleProjects < projects.length && ( // Show button only if there are more projects to load
+            <div className="flex justify-center mt-12">
+              <Button
+                variant="outline"
+                className="group"
+                onClick={handleLoadMore}
+              >
+                Load more
+                <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Button>
+            </div>
+          )}
         </motion.div>
       </div>
     </main>
