@@ -5,7 +5,7 @@ export const sendMessage = async (contactDetails: object) => {
   try {
     const response = await axios.post(
       // "http://3.110.117.102:8080/api/contact",
-      "https://contact.satyam.site/api/contact",
+      "https://contact.satyamkale.site/api/contact",
       contactDetails,
       {
         headers: {
