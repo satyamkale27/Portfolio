@@ -5,6 +5,7 @@ import { NavMenu } from "@/components/nav-menu";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import Image from "next/image";
 
 interface Project {
   title: string;
@@ -92,9 +93,11 @@ export default function WorkPage() {
                   className="block"
                 >
                   <div className="relative">
-                    <img
+                    <Image
                       src={project.image}
                       alt={`Preview of ${project.title}`}
+                      width={640} // Set appropriate width
+                      height={192} // Set appropriate height
                       className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>

@@ -5,6 +5,7 @@ import { NavMenu } from "@/components/nav-menu";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 interface BlogPost {
   category: string;
@@ -94,11 +95,13 @@ export default function BlogPage() {
                 className="group block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-card"
               >
                 {/* Blog Image */}
-                <div className="relative">
-                  <img
+                <div className="relative w-full h-64">
+                  <Image
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    layout="fill"
+                    objectFit="cover"
+                    className="transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>

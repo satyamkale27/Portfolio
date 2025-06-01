@@ -5,6 +5,7 @@ import { NavMenu } from "@/components/nav-menu";
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface Service {
   title: string;
@@ -138,7 +139,9 @@ export default function ServicesPage() {
                   </div>
                   {service.image && (
                     <div className="min-h-0">
-                      <img
+                      <Image
+                        width={640}
+                        height={192}
                         src={service.image}
                         alt={service.title}
                         className="w-full h-48 object-cover rounded-lg"

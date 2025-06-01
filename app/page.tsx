@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { NavMenu } from "@/components/nav-menu";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -66,9 +67,11 @@ export default function Home() {
             className="relative w-[200px] sm:w-[250px] md:w-[300px] lg:w-[500px] h-[200px] sm:h-[250px] md:h-[300px] lg:h-[500px] mt-8 lg:mt-0"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-orange-500/20 rounded-full blur-3xl" />
-            <img
+            <Image
               src="/satyam.png"
               alt="Profile"
+              width={500} // Adjust width based on your design
+              height={500} // Adjust height based on your design
               className="relative w-full h-full object-cover rounded-full"
             />
           </motion.div>

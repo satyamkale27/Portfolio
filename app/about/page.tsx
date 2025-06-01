@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { NavMenu } from "@/components/nav-menu";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -37,9 +38,11 @@ export default function AboutPage() {
               transition={{ delay: 0.2 }}
               className="text-center lg:text-left"
             >
-              <img
+              <Image
                 src="/satyam.png"
                 alt="Profile"
+                width={384} // Adjust width based on your design (e.g., lg:w-96)
+                height={384} // Adjust height based on your design (e.g., lg:h-96)
                 className="w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 object-cover rounded-full mx-auto lg:mx-0 mb-8"
               />
               <h2 className="text-2xl lg:text-3xl font-bold mb-4">
