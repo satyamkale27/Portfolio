@@ -54,7 +54,7 @@ export default function AboutPage() {
                 className="group w-full sm:w-auto mx-auto lg:mx-0"
               >
                 <a
-                  href="https://drive.google.com/file/d/15N0YZ7Fy21dl8lHHDIg1tYFdWAYmB9E-/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1rKtgyBhR2-dOPgsbxGqD-8EW4ppNXMAC/view?usp=drive_link"
                   target="_blank"
                 >
                   Download CV
